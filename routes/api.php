@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\HistoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
@@ -28,7 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('checkout', [TransactionController::class, 'checkout']);
 });
 
-
+Route::get('histories', [HistoryController::class, 'all']);
 Route::get('products', [ProductController::class, 'all']);
 Route::get('categories', [ProductCategoryController::class, 'all']);
 
