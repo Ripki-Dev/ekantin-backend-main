@@ -21,10 +21,10 @@
                         data: 'url',
                         name: 'url'
                     },
-                    {
-                        data: 'is_featured',
-                        name: 'is_featured'
-                    },
+                    // {
+                    //     data: 'is_featured',
+                    //     name: 'is_featured'
+                    // },
                     {
                         data: 'action',
                         name: 'action',
@@ -51,7 +51,7 @@
                             <tr>
                                 <th class="px-2 py-4">ID</th>
                                 <th class="px-6 py-4">Photo</th>
-                                <th class="px-6 py-4">Featured</th>
+                                <!-- <th class="px-6 py-4">Featured</th> -->
                                 <th class="px-6 py-4">Action</th>
                             </tr>
                         </thead>

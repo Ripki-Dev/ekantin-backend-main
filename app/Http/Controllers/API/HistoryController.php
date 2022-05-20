@@ -36,7 +36,7 @@ class HistoryController extends Controller
         $transaction = Transaction::with(['user', 'items'])->orderBy('created_at', 'desc');
 
         if ($usersId) { // memfilter pencarian data berdasarkan field
-            $transaction->where('users_id', 'like', '%', $usersId, '%');
+            $transaction->where('users_id', '=', $usersId);
         }
 
         return ResponseFormatter::success(
