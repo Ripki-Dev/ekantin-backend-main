@@ -71,30 +71,24 @@
             </div>
         </div>
     </div> -->
-    <div class="py-16">
+    <div class="py-8">
         <div class="px-3 md:px-8 -mt-24">
             <div class="container mx-auto max-w-full">
-                <div class="grid grid-cols-1 xl:grid-cols-5">
-                    <div class="xl:col-start-1 xl:col-end-4 px-4 mb-14">
+                <div class="grid grid-cols-1 xl:grid-cols-4">
+                    <div class="xl:col-start-1 xl:col-end-3 px-4 mb-14">
                         <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
                             <div class="bg-gradient-to-tr from-blue-500 to-blue-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8 justify-start shadow-lg-orange undefined">
                                 <h6 class="uppercase text-gray-200 text-xs font-medium">#1 Report</h6>
                                 <h2 class="text-white text-2xl">Jumlah Produk per Kantin</h2>
                             </div>
-                            <div class="p-4 undefined">
-                                <canvas class="p-10" id="chartPie"></canvas>
-                                <!-- <div class="relative h-96">
-                                    <div class="chartjs-size-monitor-expand">
-                                        <div class=""></div>
-                                    </div>  
-                                    <div class="chartjs-size-monitor-shrink">
-                                        <div class=""></div>
-                                    </div>
-                                </div> -->
-                            </div>
+                            <section>
+                                <div class="p-4 undefined">
+                                    <canvas class="p-4" id="chartPie"></canvas>
+                                </div>
+                            </section>
                         </div>
                     </div>
-                    <div class="xl:col-start-4 xl:col-end-6 px-4 mb-14">
+                    <div class="xl:col-start-3 xl:col-end-5 px-4 mb-14">
                         <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-4 undefined">
                             <div class="bg-gradient-to-tr from-pink-500 to-pink-700 -mt-10 mb-4 rounded-xl text-white grid items-center w-full h-24 py-4 px-8 justify-start shadow-lg-pink undefined">
                                 <h6 class="uppercase text-gray-200 text-xs font-medium">#2 Report</h6>
@@ -114,7 +108,7 @@
                                 </div> -->
                                 <br>
                                 <br>
-                                <!--  -->
+
 
                                 <!--  -->
                                 <div class="w-full bg-white rounded-xl overflow-hdden shadow-md p-2 undefined">
@@ -324,6 +318,7 @@
 </x-app-layout>
 <script>
     // piechart
+
     const dataPie = {
         labels: ["Kantin 1", "Kantin 2", "Kantin 3", "Kantin 4", "Kantin 5", ],
         datasets: [{
@@ -335,11 +330,11 @@
                 <?php echo json_encode($sukses = DB::table('products')->where('categories_id', '=', '5')->count()); ?>,
             ],
             backgroundColor: [
-                "rgb(133, 105, 241)",
-                "rgb(164, 101, 241)",
-                "rgb(101, 143, 241)",
-                "rgb(101, 103, 211)",
-                "rgb(101, 113, 241)",
+                "red",
+                "blue",
+                "yellow",
+                "purple",
+                "green",
             ],
             hoverOffset: 4,
         }, ],
@@ -350,6 +345,7 @@
         data: dataPie,
         options: {},
     };
+    // chartPie.canvas.parentNode.style.height = '128px';
 
     // bar
     const labelsBarChart = [
